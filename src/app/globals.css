@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 23% 97%;
+    --foreground: 175 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 175 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 175 25% 10%;
+    --primary: 176 73% 22%;
+    --primary-foreground: 60 23% 97%;
+    --secondary: 172 30% 92%;
+    --secondary-foreground: 176 73% 18%;
+    --accent: 38 56% 51%;
+    --accent-foreground: 30 40% 10%;
+    --muted: 75 13% 94%;
+    --muted-foreground: 175 10% 33%;
+    --border: 80 10% 86%;
+    --input: 80 10% 80%;
+    --ring: 176 73% 30%;
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 72% 24%;
+    --success-foreground: 0 0% 100%;
+    --warning: 26 90% 30%;
+    --warning-foreground: 0 0% 100%;
+    --info: 224 76% 48%;
+    --info-foreground: 0 0% 100%;
+    --radius: 0.875rem;
+    /* Chart categorical palette — validated with the dataviz validator (light, #ffffff surface). */
+    --viz-1: #0b8f84; --viz-2: #eb6834; --viz-3: #2a78d6; --viz-4: #eda100;
+    --viz-5: #6250d6; --viz-6: #e87ba4; --viz-7: #008300;
+  }
+
+  .dark {
+    --background: 174 31% 6%;
+    --foreground: 171 20% 93%;
+    --card: 175 28% 9%;
+    --card-foreground: 171 20% 93%;
+    --popover: 175 28% 9%;
+    --popover-foreground: 171 20% 93%;
+    --primary: 173 61% 43%;
+    --primary-foreground: 174 31% 6%;
+    --secondary: 176 22% 16%;
+    --secondary-foreground: 171 20% 93%;
+    --accent: 39 66% 64%;
+    --accent-foreground: 30 40% 8%;
+    --muted: 176 22% 13%;
+    --muted-foreground: 171 10% 68%;
+    --border: 176 18% 18%;
+    --input: 176 18% 24%;
+    --ring: 173 61% 50%;
+    --destructive: 0 85% 70%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 60% 45%;
+    --success-foreground: 174 31% 6%;
+    --warning: 35 90% 55%;
+    --warning-foreground: 174 31% 6%;
+    --info: 217 90% 65%;
+    --info-foreground: 174 31% 6%;
+    /* Dark steps of the same hues — validated against the #111e1d card surface. */
+    --viz-1: #16a596; --viz-2: #d95926; --viz-3: #3987e5; --viz-4: #c98500;
+    --viz-5: #9085e9; --viz-6: #d55181; --viz-7: #008300;
+  }
+
+  html[lang="en"] { --font-body: var(--font-inter); --font-heading: var(--font-jakarta); }
+  html[lang="ar"] { --font-body: var(--font-plex-ar); --font-heading: var(--font-plex-ar); }
+
+  * { @apply border-border; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-background text-foreground antialiased; font-feature-settings: "cv11", "ss01"; }
+  h1, h2, h3, h4 { @apply font-heading tracking-tight; }
+  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background; }
+  [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+}
+
+@layer utilities {
+  .tabular { font-variant-numeric: tabular-nums; }
+  .scrollbar-none { scrollbar-width: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+}
+
+@media print {
+  .no-print, .breadcrumbs { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }
